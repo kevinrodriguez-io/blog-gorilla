@@ -1,1 +1,1 @@
-# web-nestjs-workshop
+# web-nextjs-workshop
