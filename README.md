@@ -1,6 +1,8 @@
 ![Node minimim version](https://img.shields.io/node/v/next)
 ![Slack: next-js](https://img.shields.io/badge/Slack-next--js-blue)
 ![next-js-seeklogo com](https://user-images.githubusercontent.com/51496994/62640886-bc7d2480-b8ff-11e9-9cbf-54b83054efd0.png)
+![ContentfulLogo64](https://user-images.githubusercontent.com/51496994/62641932-e46d8780-b901-11e9-95d4-dd51e9372aad.png)
+
 
 # Welcome to the Next-JS Workshop
 
