@@ -1,3 +1,5 @@
+![next-js-seeklogo com](https://user-images.githubusercontent.com/51496994/62640886-bc7d2480-b8ff-11e9-9cbf-54b83054efd0.png)
+
 # Welcome to the Next-JS Workshop
 
 We're going to learn a lot here. Please refer to the slides for more information.
