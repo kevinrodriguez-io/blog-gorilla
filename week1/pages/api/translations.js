@@ -1,4 +1,4 @@
-const VALID_LANGS = ['en', 'es'];
+import { VALID_LANGS } from '../../lib/translations/validLangs';
 
 export default async function handle(req, res) {
   const { lang, namespace } = req.query;

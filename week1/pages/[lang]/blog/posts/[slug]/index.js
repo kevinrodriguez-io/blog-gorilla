@@ -1,4 +1,5 @@
 import React from 'react';
+import Error from 'next/error';
 import Parallax from 'react-css-parallax';
 import { Segment } from 'semantic-ui-react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
@@ -8,7 +9,8 @@ import Posts from '../../../../../components/Posts';
 import blog from '../../../../../lib/api/blog';
 import getLangFromQuery from '../../../../../lib/query/getLangFromQuery';
 
-const Index = ({ lang, post, entries }) => {
+const Index = ({ lang, post, entries, statusCode }) => {
+  if (statusCode === 404) return <Error statusCode={404} />;
   const { featuredImage, title, body } = post.fields;
   return (
     <>
@@ -37,7 +39,7 @@ const Index = ({ lang, post, entries }) => {
   );
 };
 
-Index.getInitialProps = async ({ query }) => {
+Index.getInitialProps = async ({ res, query }) => {
   const { slug } = query;
   const { lang, locale } = getLangFromQuery({ query });
   try {
@@ -47,7 +49,10 @@ Index.getInitialProps = async ({ query }) => {
     ]);
     return { lang, post, entries };
   } catch (error) {
-    console.error(error);
+    if (error.message === 'There are no posts for that slug') {
+      res.statusCode = 404;
+      return { statusCode: 404 };
+    }
   }
 };
 
