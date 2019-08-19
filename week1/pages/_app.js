@@ -27,7 +27,13 @@ class BlogApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-    if (pageProps && pageProps.invalidLang) return <Error statusCode={404} />;
+    if (pageProps && pageProps.invalidLang)
+      return (
+        <Error
+          statusCode={404}
+          title="Sorry, but our blog is not available in that language yet"
+        />
+      );
     return (
       <Container>
         <Component {...pageProps} />
