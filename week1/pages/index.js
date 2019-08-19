@@ -12,7 +12,11 @@ import getLangFromQuery from '../lib/query/getLangFromQuery';
 const Index = ({ lang, entries, t }) => {
   return (
     <>
-      <Head />
+      <Head
+        title={t['blogTitle']}
+        description={t['blogSubtitle']}
+        ogImage="/static/darkSea.jpg"
+      />
       <Parallax src="/static/darkSea.jpg" alt="Dark sea" height="400px">
         <Nav lang={lang} />
         <section className="grid-absolute-center">

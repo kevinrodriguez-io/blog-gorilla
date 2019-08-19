@@ -4,6 +4,7 @@ import Parallax from 'react-css-parallax';
 import { Segment } from 'semantic-ui-react';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
+import Head from '../../../../../components/Head';
 import Nav from '../../../../../components/Nav';
 import Posts from '../../../../../components/Posts';
 import blog from '../../../../../lib/api/blog';
@@ -11,9 +12,14 @@ import getLangFromQuery from '../../../../../lib/query/getLangFromQuery';
 
 const Index = ({ lang, post, entries, statusCode }) => {
   if (statusCode === 404) return <Error statusCode={404} />;
-  const { featuredImage, title, body } = post.fields;
+  const { featuredImage, title, body, shortDescription } = post.fields;
   return (
     <>
+      <Head
+        title={title}
+        description={shortDescription}
+        ogImage={featuredImage.fields.file.url}
+      />
       <Parallax
         src={featuredImage.fields.file.url}
         alt={featuredImage.fields.description}
