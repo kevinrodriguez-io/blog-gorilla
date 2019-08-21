@@ -1,5 +1,7 @@
 const withCSS = require('@zeit/next-css');
 
+// TODO: add contentful keys
+
 module.exports = withCSS({
   webpack: config => {
     // Fixes npm packages that depend on `fs` module
@@ -25,4 +27,5 @@ module.exports = withCSS({
     });
     return config;
   },
+  // TODO: add publicRuntimeConfig
 });
