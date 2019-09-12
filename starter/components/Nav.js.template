@@ -8,17 +8,16 @@ const links = [].map(link => {
   return link;
 });
 
-const getAlternativeLang = (router) => {
+const getAlternativeLang = router => {
   let altLang = '';
   if (router.query.lang) {
     const { lang } = router.query;
     altLang = lang === 'en' ? 'es' : 'en';
-  }
-  else {
+  } else {
     altLang = 'es';
   }
   return altLang;
-}
+};
 
 const Nav = ({ lang }) => {
   const router = useRouter();
@@ -27,12 +26,12 @@ const Nav = ({ lang }) => {
     <nav>
       <ul>
         <li>
-          <Link href="/[lang]/" as={`/${lang}/`}>
+          <Link href="/[lang]/" as={`/lang/`}>
             <a>Home</a>
           </Link>
         </li>
         <li>
-          <Link href="/[lang]/" as={`/${altLang}/`}>
+          <Link href="/[lang]/" as={`/altLang/`}>
             <a>{altLang === 'es' ? '🇪🇸 Español' : '🇺🇸 English'}</a>
           </Link>
         </li>
