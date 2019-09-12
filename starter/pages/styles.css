@@ -1,0 +1,11 @@
+body {
+  background-color: var(--flat-white-light);
+  color: var(--flat-black-dark)!important;
+}
+.grid-absolute-center {
+  display: grid;
+  place-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
